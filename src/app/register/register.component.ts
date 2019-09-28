@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  subscriptionOpted;
 
-  ngOnInit() {
+  showRegisterForm() {
+    this.subscriptionOpted = true;
   }
 
+  hideRegisterForm() {
+    this.subscriptionOpted = false;
+  }
+
+  ngOnInit() {
+    this.subscriptionOpted = false;
+  }
 }

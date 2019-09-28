@@ -1,9 +1,9 @@
-<div class="section-header">
+<div class="section-header" [hidden]="subscriptionOpted">
   <div class="container-fluid">
     <h1 class="text-center">Plans & Pricing</h1>
   </div>
 </div>
-<div class="section-price-card">
+<div [hidden]="subscriptionOpted" class="section-price-card">
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-12 col-md-3">
@@ -21,7 +21,7 @@
             <li class="list-group-item">View & export statistics</li>
             <li class="list-group-item">View & export rankings</li>
           </ul>
-          <button type="button" class="btn btn-primary">Start my smart trial</button>
+          <button type="button" class="btn btn-primary" (click)="showRegisterForm()">Start my smart trial</button>
         </div>
       </div>
       <div class="col-12 col-md-3">
@@ -39,7 +39,7 @@
             <li class="list-group-item">View & export statistics</li>
             <li class="list-group-item">View & export rankings</li>
           </ul>
-          <button type="button" class="btn btn-primary">Start my Business trial</button>
+          <button type="button" class="btn btn-primary" (click)="showRegisterForm()">Start my Business trial</button>
         </div>
       </div>
       <div class="col-12 col-md-3">
@@ -57,9 +57,43 @@
             <li class="list-group-item">View & export statistics</li>
             <li class="list-group-item">View & export rankings</li>
           </ul>
-          <button type="button" class="btn btn-primary">Start my Corporate trial</button>
+          <button type="button" class="btn btn-primary" (click)="showRegisterForm()">Start my Corporate trial</button>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div [hidden]="!subscriptionOpted" class="register-form-holder">
+  <div class="form-rigister">
+    <form class="">    
+      <div class="d-flex justify-content-end social_icon">
+        <span><i class="fab fa-facebook-square"></i></span>
+        <span><i class="fab fa-twitter-square"></i></span>
+        <span><i class="fa fa-linked-in-square"></i></span>
+      </div>     
+      <h2 class="form-signin-heading">Register</h2>
+      <div class="form-group">
+        <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Password" required=""/>  
+      </div> 
+      <div class="form-group">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>   
+      <div class="card-footer">
+        <div class="d-flex justify-content-center links">
+          Don't have an account?<a href="#">Sign Up</a>
+        </div>
+        <div class="d-flex justify-content-center">
+          <a href="#">Forgot your password?</a>
+        </div>
+      </div>
+    </form>
+    <a class="btn-back" (click)="hideRegisterForm()">Back</a>
   </div>
 </div>
