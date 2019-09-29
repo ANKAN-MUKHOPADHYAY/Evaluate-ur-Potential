@@ -2,12 +2,25 @@
   background-color: #1976d2;
   border-bottom: .5px solid white;
 
+  // .navbar {}
+
   .navbar-brand {
     margin-right: 4rem;
     color: white;
   }
 
+  .nav-item {
+    border-radius: 50px;
+    transition: all 0.2s ease-in;
+
+    &.active,
+    &:hover {
+      background: #0b559e;
+    }
+  }
+
   .nav-link {
+    padding: 5px 20px;
     color: white;
   }
 }
